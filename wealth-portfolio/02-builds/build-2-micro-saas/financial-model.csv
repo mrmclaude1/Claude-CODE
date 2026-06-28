@@ -1,0 +1,14 @@
+Month (from SaaS launch),New Customers,Churned,Active Customers,Avg Price (USD),MRR (USD),Infra+API Costs (USD),Dev/Contractor (USD),Net (USD),Cumulative Net (USD),Notes
+1,8,0,8,90,720,150,500,70,70,Seed from service clients as beta-to-paid
+2,7,1,14,90,1260,160,500,600,670,
+3,9,1,22,92,2024,180,500,1344,2014,Word of mouth + service channel
+4,10,2,30,95,2850,200,300,2350,4364,Dev to part-time
+5,11,2,39,98,3822,220,300,3302,7666,
+6,12,3,48,100,4800,250,300,4250,11916,~5k MRR target
+9,n/a,n/a,75,105,7875,350,400,7125,n/a,Run-rate by month 9
+12,n/a,n/a,100,110,11000,450,500,10050,n/a,~11k MRR; exit-able asset
+ASSUMPTIONS,,,,,,,,,,
+"Launch only after Build 1 validates demand (decision gate). Months are from SaaS launch ~month 5-6 of overall plan.",,,,,,,,,,
+"Churn modeled at ~4-6%/mo early improving with product. Service clients de-risk the cold-start.",,,,,,,,,,
+"At ~11k MRR (132k ARR) and ~75% margin, SDE ~100k. At 4x SDE that is a ~400k asset value built on validated demand.",,,,,,,,,,
+"Downside: stalls at ~2k MRR -> still a 24k/yr cashflow asset. Upside: 200+ customers -> 20k+ MRR.",,,,,,,,,,
