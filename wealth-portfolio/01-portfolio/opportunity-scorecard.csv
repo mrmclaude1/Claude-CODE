@@ -1,0 +1,23 @@
+Rank,Opportunity,Category,Startup Cost (USD),Monthly Time (hrs),Automation Potential (1-10),Difficulty (1-10),Risk (1-10),Scalability (1-10),Expected Monthly Income mo12 (USD),Expected Annual Income yr1 (USD),Probability of Success (%),Payback (months),Capital Required (USD),Long-Term Asset Value (1-10),Exit Value (USD multiple),Competitive Advantage (1-10),AI Advantage (1-10),Overall Score (0-100)
+1,Construction/Trades AI Automation Service (productized),AI Services / B2B,300,8,8,5,3,8,9000,42000,70,1,300,8,3-5x SDE,10,9,87
+2,Construction-Niche Micro-SaaS (spun from service patterns),Micro SaaS / Software,400,6,9,6,4,9,4000,12000,55,6,400,10,3.9-5x SDE,9,8,84
+3,Capital Portfolio: Index core + Dividend sleeve + Crypto sleeve,Investing / Dividend / Crypto,0,1,10,2,4,7,0,0,90,0,seed from cashflow,9,n/a (liquid),5,4,80
+4,Construction PM Template/Doc Library (info product),Templates / Info Products,150,3,9,3,2,7,1200,6000,65,2,150,6,2-3x annual,8,7,76
+5,B2B Lead-Gen as a Service (construction/trades vertical),Lead Generation,250,7,8,5,5,8,5000,24000,55,2,250,6,2-4x SDE,8,8,75
+6,Real Estate (existing competency; cashflow target),Real Estate,high,4,6,6,5,6,0,0,80,n/a,large,9,asset comps,8,4,73
+7,Vertical Newsletter + Sponsorships (capital projects/AEC),Media / Recurring,100,6,7,4,3,8,1500,7000,50,3,100,7,2-4x annual,7,7,71
+8,Micro-SaaS / Small Biz Acquisition (buy don't build),Business Acquisitions,large,6,7,7,6,7,0,0,60,18-36,5k-50k+,9,3.9x SDE,7,6,70
+9,Local Service Lead-Gen Site (rank-and-rent),Local Service Automation,300,5,7,5,5,7,2000,9000,50,3,300,7,3-4x annual,6,6,69
+10,AI Proposal/Bid Writing Tool (construction estimators),Micro SaaS / AI,400,6,9,6,5,9,3000,9000,45,7,400,9,4-5x SDE,8,9,69
+11,Productized Notion/Airtable Ops Systems (B2B),Automation Products,150,5,8,4,4,7,1800,8000,55,2,150,5,2-3x annual,6,7,67
+12,Data Product: Permit/Bid/RFP Aggregator (construction),Data Products,400,6,8,7,5,8,2500,8000,40,8,400,8,4x ARR,8,8,66
+13,Dividend/Cashflow Crypto (staking + blue-chip DeFi),Crypto,0,1,9,3,7,6,0,0,60,0,seed from cashflow,6,liquid,4,4,62
+14,Affiliate/Comparison Content Site (construction software),Lead Gen / Content,200,6,8,4,4,7,1500,5000,45,5,200,6,2-3x annual,5,6,61
+15,Online Course (capital projects / construction PM),Information Products,200,8,5,5,3,8,2000,7000,45,3,200,5,1-2x annual,7,5,60
+16,Licensing SOPs/Frameworks to contractors (white-label),Licensing,150,4,6,5,4,6,1200,4000,40,3,150,6,2-3x annual,7,5,58
+17,AI Voice Receptionist for Trades (resell/integrate),AI Services,300,7,8,5,5,7,2500,9000,45,3,300,5,2-4x SDE,5,8,58
+18,Marketplace (niche: used construction equipment/parts),Online Marketplaces,400,10,6,8,7,9,1500,3000,30,12,400,8,4x+ revenue,5,5,52
+19,Subscription Box / Physical Product,Subscription / Physical,large,12,3,6,7,6,1500,4000,35,12,2000+,5,1-2x annual,3,2,44
+20,Day Trading / Active Crypto Trading,Crypto / Active,0,15,4,9,10,3,0,0,15,n/a,variable,1,n/a,2,3,28
+21,Dropshipping (generic),E-commerce,300,15,4,6,8,7,800,2000,20,12,300,2,1x annual,2,4,27
+22,Faceless YouTube / Content Farm (generic),Media,100,15,5,5,5,8,1000,3000,25,8,100,4,1-2x annual,3,5,33
