@@ -1,0 +1,17 @@
+Rank,Opportunity,Layer,StartupCost_USD,WeeklyHours_SteadyState,PaybackMonths,Yr1_MonthlyIncome_USD,Yr3_MonthlyIncome_USD,ProbOfSuccess_Pct,Moat_18,ProbScore_15,Automation_13,IncomePotential_12,Scalability_10,ExitValue_10,TimeLight_8,CostLight_6,Durability_5,LegalSafety_3,WeightedOverall_10
+1,AEC automation productized service to micro-SaaS (FLAGSHIP),L1-L2,300,5,4,2500,12000,65,10,8,8,8,8,8,5,9,8,8,8.18
+2,Contractor prequalification / compliance-doc automation (entry wedge of flagship),L1-L2,150,4,3,1500,7000,70,9,7,8,6,7,7,6,9,7,7,7.41
+3,Vertical construction newsletter + bid/intel data product,L2,200,5,9,800,6000,55,8,6,8,6,8,7,6,9,7,8,7.21
+4,Construction bid / opportunity intelligence data product,L2,250,5,10,700,6500,55,8,6,8,7,8,7,6,8,7,6,7.21
+5,Productized templates + licensing (estimating sheets / Airtable / Notion for contractors),L2,100,3,4,400,3000,65,7,7,9,4,8,5,8,10,6,8,7.04
+6,Passive investing engine (index + dividend + crypto core),L3,0,1,0,0,0,90,3,9,10,4,7,6,10,7,10,10,6.99
+7,Construction project-controls / schedule-delay-claim consulting (productized high-ticket),L1,150,4,2,3000,8000,70,9,8,5,8,5,4,4,9,7,7,6.75
+8,Contractor pay-per-lead / lead generation,L2,300,5,7,600,5000,55,8,6,7,7,7,6,5,8,6,6,6.75
+9,Info product / cohort course (construction PM + AI estimating),L2,150,5,6,500,4000,55,7,6,8,6,9,4,5,9,5,8,6.65
+10,Rental real estate (continue / BRRRR),L4,Capital-heavy,6,n/a,400,2500,75,6,8,6,6,5,8,6,2,9,7,6.34
+11,Affiliate / SEO content site (construction tools & methods),L2,150,5,14,200,3500,45,6,5,8,5,8,6,6,9,4,7,6.30
+12,Crypto core allocation (BTC/ETH satellite),L3,0,1,0,0,0,60,2,6,10,4,8,7,10,7,6,7,6.27
+13,Local service automation (CRM / booking / reactivation for trades),L1-L2,250,5,5,800,4000,55,6,6,7,6,6,6,5,8,6,7,6.20
+14,SMB acquisition (boring cash-flow service business),L4,Capital-heavy,n/a,2000,15000,55,7,6,4,9,6,8,2,2,8,6,6.02
+15,Dividend / covered-call income overlay,L3,0,1,0,0,0,60,3,6,8,5,6,5,8,5,6,7,5.63
+16,General AI automation agency (non-construction SMB),L1,300,8,5,2000,8000,45,4,6,6,7,6,5,3,9,5,7,5.58

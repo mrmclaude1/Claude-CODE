@@ -1,0 +1,7 @@
+Stage,MonthlyNetProfit_USD,Tax_SetAside_Pct,Business_Reserve_Pct,Reinvest_Growth_Pct,Passive_Engine_L3_Pct,Ownership_L4_Pct,PrimaryGoalOfStage
+0 - Pre-revenue,0,0,0,0,0,0,Validate demand; spend under 500 cap only; no distributions
+1 - First cash,0-2000,30,20,50,0,0,Fill 3-6mo business reserve; reinvest in automation to cut your hours
+2 - Traction,2000-5000,30,10,30,30,0,Reserve full; begin feeding passive engine on funding order
+3 - Scaling,5000-10000,30,5,20,40,5,Passive engine becomes primary sink; seed an ownership fund
+4 - Cash machine,10000-25000,30,5,10,35,20,Build real-estate / acquisition war chest while compounding L3
+5 - Family office,25000+,30,5,5,30,30,Deploy into durable ownership; passive income approaches expense coverage
