@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches: [main, "claude/**"]
+  pull_request:
+
+jobs:
+  test:
+    name: Engine tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run unit tests (stdlib only, no install)
+        run: python -m unittest discover -s tests -v
+      - name: Smoke-test the CLI on the sample project
+        run: python -m app.cli examples/sample_project.json
