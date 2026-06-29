@@ -1,0 +1,18 @@
+# Local + Unraid deployment for the pay-app engine.
+# Usage:
+#   docker compose up --build      # build and run
+#   curl localhost:8000/health     # verify
+services:
+  payapp-engine:
+    build: .
+    image: payapp-engine:latest
+    container_name: payapp-engine
+    restart: unless-stopped
+    ports:
+      - "8000:8000"        # host:container — change host port on Unraid if 8000 is taken
+    environment:
+      - PORT=8000
+      - HOST=0.0.0.0
+    # Drafts can be written to a mounted volume if you switch to file output later:
+    # volumes:
+    #   - /mnt/user/appdata/payapp-engine/drafts:/srv/drafts

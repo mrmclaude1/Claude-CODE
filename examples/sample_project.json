@@ -1,0 +1,29 @@
+{
+  "project_name": "Riverside Medical Office - Electrical",
+  "state": "CA",
+  "period_through": "2026-06-30",
+  "original_contract_sum": 150000,
+  "retainage_pct": 10,
+  "previous_certificates": 36000,
+  "payment_type": "progress",
+  "payment_received": false,
+  "change_orders": [],
+  "line_items": [
+    {
+      "item_no": "1",
+      "description": "Rough-in",
+      "scheduled_value": 100000,
+      "previous_completed": 40000,
+      "this_period_completed": 20000,
+      "materials_stored": 0
+    },
+    {
+      "item_no": "2",
+      "description": "Fixtures & gear",
+      "scheduled_value": 50000,
+      "previous_completed": 10000,
+      "this_period_completed": 10000,
+      "materials_stored": 5000
+    }
+  ]
+}

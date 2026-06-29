@@ -1,0 +1,23 @@
+Section,Month,DFY_Clients,Software_Clients,Gross_MRR_USD,Cash_Costs_USD,Net_Cash_Profit_USD,Your_Hours_Per_Week,Notes
+BASE_CASE,M1,0,0,0,80,-80,5,Discovery calls; build target list; $500 cap respected
+BASE_CASE,M2,0,0,0,80,-80,6,Discovery continues; refine wedge from real conversations
+BASE_CASE,M3,1,0,1500,120,1380,5,First DFY client signed (Rung 1)
+BASE_CASE,M4,2,0,3000,160,2840,6,Second client; document the repeated steps
+BASE_CASE,M5,3,0,4500,200,4300,7,Build internal tooling in parallel (Rung 2 begins)
+BASE_CASE,M6,4,0,6000,360,5640,7,Add E&O insurance (~100/mo); join CFMA/AGC chapter
+BASE_CASE,M7,5,0,7500,380,7120,7,Tooling cuts hours/client; capacity freed
+BASE_CASE,M8,5,1,7999,400,7599,6,First self-serve software client (Rung 3 pilot)
+BASE_CASE,M9,6,2,9498,440,9058,6,Referrals compounding; one published case study
+BASE_CASE,M10,6,4,10992,470,10522,6,Software tier scaling; hours/client falling
+BASE_CASE,M11,6,6,11988,500,11488,5,Capterra listing live; inbound begins
+BASE_CASE,M12,6,8,12984,540,12444,5,End Year 1: ~13k gross MRR base case
+BASE_CASE,M15,6,14,15986,640,15346,5,Software mix dominates; margin expanding
+BASE_CASE,M18,7,20,20480,760,19720,5,Mid Year 2; capacity from automation not your hours
+BASE_CASE,M21,7,28,24472,900,23572,5,Self-serve flywheel; minimal touch per client
+BASE_CASE,M24,8,36,29964,1100,28864,5,End Year 2: ~30k gross MRR base case
+SCENARIO_SUMMARY,M12_Conservative,3,2,5498,400,5098,5,Slow sales; only conservative ramp
+SCENARIO_SUMMARY,M12_Base,6,8,12984,540,12444,5,Central planning case
+SCENARIO_SUMMARY,M12_Upside,8,16,19984,700,19284,6,Strong referral loop + early case study
+SCENARIO_SUMMARY,M24_Conservative,5,12,13488,600,12888,5,Plateaus as lifestyle business
+SCENARIO_SUMMARY,M24_Base,8,36,29964,1100,28864,5,Central planning case
+SCENARIO_SUMMARY,M24_Upside,10,70,49930,1800,48130,6,Approaching a sellable SaaS asset

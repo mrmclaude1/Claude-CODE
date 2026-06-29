@@ -1,0 +1,93 @@
+{
+  "_meta": {
+    "purpose": "Starting-point lien-waiver rules by US state. NOT legal advice and NOT exhaustive.",
+    "warning": "Every entry must be verified by a licensed attorney before any waiver ships. Lien law changes; statutory citations may be amended. Where data is incomplete, the engine flags HUMAN REVIEW REQUIRED rather than guessing.",
+    "fields": {
+      "statutory_forms_required": "State mandates specific statutory waiver form language.",
+      "notarization_required": "Notarization required for some/all waiver types.",
+      "citation": "Primary statute (verify currency).",
+      "notes": "State-specific quirks to flag."
+    },
+    "default_when_state_absent": "Treat as general (no statutory form), flag for human review."
+  },
+  "states": {
+    "CA": {
+      "statutory_forms_required": true,
+      "notarization_required": false,
+      "citation": "Cal. Civ. Code §§ 8132-8138",
+      "notes": ["Four statutory forms are mandatory and must be used verbatim.", "Conditional vs unconditional and progress vs final each have a distinct prescribed form."]
+    },
+    "TX": {
+      "statutory_forms_required": true,
+      "notarization_required": true,
+      "citation": "Tex. Prop. Code § 53.284",
+      "notes": ["Statutory forms required.", "Unconditional waivers commonly require notarization in practice — verify per form/type."]
+    },
+    "AZ": {
+      "statutory_forms_required": true,
+      "notarization_required": false,
+      "citation": "Ariz. Rev. Stat. § 33-1008",
+      "notes": ["Statutory forms required."]
+    },
+    "FL": {
+      "statutory_forms_required": true,
+      "notarization_required": false,
+      "citation": "Fla. Stat. § 713.20",
+      "notes": ["Statutory waiver forms provided by statute."]
+    },
+    "GA": {
+      "statutory_forms_required": true,
+      "notarization_required": false,
+      "citation": "O.C.G.A. § 44-14-366",
+      "notes": ["Statutory forms required.", "TIMING TRAP: a waiver can auto-convert/become binding after a set period (historically ~60-90 days) absent a filed affidavit of nonpayment — verify current rule and deadlines."]
+    },
+    "MA": {
+      "statutory_forms_required": true,
+      "notarization_required": false,
+      "citation": "Mass. Gen. Laws ch. 254 § 32",
+      "notes": ["Statutory forms required."]
+    },
+    "MI": {
+      "statutory_forms_required": true,
+      "notarization_required": false,
+      "citation": "Mich. Comp. Laws § 570.1115",
+      "notes": ["Statutory waiver forms."]
+    },
+    "MN": {
+      "statutory_forms_required": false,
+      "notarization_required": false,
+      "citation": "Minn. Stat. § 514.07",
+      "notes": ["No single mandatory form, but specific statutory-notice language rules apply — verify."]
+    },
+    "MS": {
+      "statutory_forms_required": true,
+      "notarization_required": true,
+      "citation": "Miss. Code § 85-7-433",
+      "notes": ["Statutory forms; notarization commonly required — verify per type."]
+    },
+    "MO": {
+      "statutory_forms_required": false,
+      "notarization_required": true,
+      "citation": "Mo. Rev. Stat. § 429.005",
+      "notes": ["Notarized 'Consent of Owner' / waiver notice rules — verify."]
+    },
+    "NV": {
+      "statutory_forms_required": true,
+      "notarization_required": false,
+      "citation": "Nev. Rev. Stat. § 108.2453",
+      "notes": ["Statutory forms required; waiver of future/unaccrued lien rights is void."]
+    },
+    "UT": {
+      "statutory_forms_required": true,
+      "notarization_required": false,
+      "citation": "Utah Code § 38-1a-802",
+      "notes": ["Statutory forms required."]
+    },
+    "WY": {
+      "statutory_forms_required": false,
+      "notarization_required": true,
+      "citation": "Wyo. Stat. § 29-1-312",
+      "notes": ["Notarization/acknowledgment commonly required — verify."]
+    }
+  }
+}

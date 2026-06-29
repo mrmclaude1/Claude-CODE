@@ -1,0 +1,113 @@
+{
+  "name": "Pay-App + Lien-Waiver Pipeline (SKELETON)",
+  "meta": {
+    "description": "Importable starting skeleton. Webhook intake -> LLM extract (Claude) -> deterministic core (app.cli) -> error gate -> human QA. Wire your own credentials and the executeCommand path to where app/ lives. This is a scaffold, not a finished flow.",
+    "templateCredsSetupCompleted": false
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "payapp-intake",
+        "responseMode": "responseNode"
+      },
+      "id": "node-webhook",
+      "name": "Intake Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "x-api-key", "value": "={{ $env.ANTHROPIC_API_KEY }}" },
+            { "name": "anthropic-version", "value": "2023-06-01" },
+            { "name": "content-type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"claude-opus-4-8\",\n  \"max_tokens\": 2000,\n  \"system\": \"Extract a ProjectContext JSON (project_name, state, period_through, original_contract_sum, retainage_pct, previous_certificates, payment_type, payment_received, change_orders[], line_items[]) from the attached construction billing documents. Output ONLY valid JSON matching app/models.py. Do not compute money — the deterministic engine does that.\",\n  \"messages\": [ { \"role\": \"user\", \"content\": {{ JSON.stringify($json.documents) }} } ]\n}",
+        "options": {}
+      },
+      "id": "node-extract",
+      "name": "LLM Extract (Claude)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [520, 300]
+    },
+    {
+      "parameters": {
+        "command": "=python3 -m app.cli <(echo '{{ JSON.stringify($json.extracted) }}') --out /data/drafts/{{ $json.client_id }}-{{ $now.toFormat('yyyyLLdd') }}.md"
+      },
+      "id": "node-core",
+      "name": "Deterministic Core (app.cli)",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [800, 300],
+      "notes": "Exit code is non-zero when blocking ERRORs exist. Point cwd at the repo so 'app' is importable, or use 'python3 -m app.cli /path/to/input.json'."
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            { "value1": "={{ $json.exitCode }}", "operation": "equal", "value2": 0 }
+          ]
+        }
+      },
+      "id": "node-gate",
+      "name": "Blocking Errors?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [1080, 300],
+      "notes": "TRUE branch = clean (exit 0) -> route to human QA. FALSE branch = blocking errors -> route back for correction."
+    },
+    {
+      "parameters": {},
+      "id": "node-qa",
+      "name": "Human QA Queue",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [1360, 200],
+      "notes": "MANDATORY GATE. Replace with your approval mechanism (email/Slack approve, n8n Wait node, or a review UI). No document leaves before a human approves."
+    },
+    {
+      "parameters": {},
+      "id": "node-fix",
+      "name": "Return for Correction",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [1360, 420],
+      "notes": "Blocking errors present. Notify yourself with the compliance flags; fix inputs and re-run."
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"status\": \"draft_generated\", \"requires_human_qa\": true } }}"
+      },
+      "id": "node-respond",
+      "name": "Respond",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1640, 200]
+    }
+  ],
+  "connections": {
+    "Intake Webhook": { "main": [[{ "node": "LLM Extract (Claude)", "type": "main", "index": 0 }]] },
+    "LLM Extract (Claude)": { "main": [[{ "node": "Deterministic Core (app.cli)", "type": "main", "index": 0 }]] },
+    "Deterministic Core (app.cli)": { "main": [[{ "node": "Blocking Errors?", "type": "main", "index": 0 }]] },
+    "Blocking Errors?": {
+      "main": [
+        [{ "node": "Human QA Queue", "type": "main", "index": 0 }],
+        [{ "node": "Return for Correction", "type": "main", "index": 0 }]
+      ]
+    },
+    "Human QA Queue": { "main": [[{ "node": "Respond", "type": "main", "index": 0 }]] }
+  },
+  "settings": {},
+  "active": false
+}
