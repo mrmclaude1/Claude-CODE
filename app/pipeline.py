@@ -29,6 +29,46 @@ def has_blocking_errors(flags: list[ComplianceFlag]) -> bool:
     return any(f.severity == "ERROR" for f in flags)
 
 
+def package_to_dict(pkg: DraftPackage) -> dict:
+    """JSON-serializable view of a draft package (Decimals -> strings)."""
+    a, w = pkg.payapp, pkg.waiver
+    return {
+        "requires_human_qa": True,
+        "final": pkg.final,  # always False from this engine
+        "blocking_errors": has_blocking_errors(pkg.flags),
+        "project": {
+            "project_name": pkg.project.project_name,
+            "state": pkg.project.state,
+            "period_through": pkg.project.period_through,
+        },
+        "g702": {
+            "line1_original_contract": str(a.line1_original_contract),
+            "line2_net_change_orders": str(a.line2_net_change_orders),
+            "line3_contract_sum_to_date": str(a.line3_contract_sum_to_date),
+            "line4_total_completed_stored": str(a.line4_total_completed_stored),
+            "line5_retainage": str(a.line5_retainage),
+            "line6_total_earned_less_retainage": str(a.line6_total_earned_less_retainage),
+            "line7_previous_certificates": str(a.line7_previous_certificates),
+            "line8_current_payment_due": str(a.line8_current_payment_due),
+            "line9_balance_to_finish_incl_retainage": str(a.line9_balance_to_finish_incl_retainage),
+        },
+        "waiver": {
+            "waiver_type": w.waiver_type,
+            "statutory_form": w.statutory_form,
+            "notarization_required": w.notarization_required,
+            "amount": str(w.amount),
+            "notes": w.notes,
+            "human_review_required": w.human_review_required,
+            "review_reasons": w.review_reasons,
+        },
+        "flags": [
+            {"severity": f.severity, "code": f.code, "message": f.message}
+            for f in pkg.flags
+        ],
+        "markdown": render_markdown(pkg),
+    }
+
+
 def render_markdown(pkg: DraftPackage) -> str:
     p, a, w = pkg.project, pkg.payapp, pkg.waiver
     lines: list[str] = []
